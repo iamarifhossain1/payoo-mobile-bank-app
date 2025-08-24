@@ -21,35 +21,34 @@
   </head>
 
   <body class="flex flex-col justify-center items-center bg-[#F4F5F7] h-[100vh] outfit">
+    <!-- Heading & Slogan -->
+    <h1 class="text-xl text-center text-sky-500 mb-3">Welcome to Payoo Mobile Bank</h1>
+    <small class="text-sm mb-8">Secure Banking. Anytime, Anywhere.</small>
+    <!-- Login Form Logo -->
+    <div class="flex justify-center items-center h-[150px] w-[300px]  bg-[url(./assets/bg.png)] bg-cover">
+      <img src="assets/Group.png" alt="">
+    </div>
 
-    <section class="max-w-lg">
-      <!-- Heading & Slogan -->
-      <h1 class="text-xl text-center text-sky-500 mb-3">Welcome to Payoo Mobile Bank</h1>
-      <small class="text-sm mb-8">Secure Banking. Anytime, Anywhere.</small>
-      <!-- Login Form Logo -->
-      <div class="flex justify-center items-center h-[150px] w-[300px]  bg-[url(./assets/bg.png)] bg-cover">
-        <img src="assets/Group.png" alt="">
+    <!-- Login Form -->
+    <form class="w-[350px] bg-white rounded-2xl p-6">
+
+      <!-- Mobile Number -->
+      <div>
+        <label for="" class="font-semibold">Mobile Number</label><br />
+        <input id="mobile-number" type="text" placeholder="Enter your number" class="input bg-[#F4F5F7] mt-3 rounded-3xl"/>
       </div>
 
-      <!-- Login Form -->
-      <form class="w-[350px] bg-white rounded-2xl p-6">
+      <!-- Pin Number -->
+      <div class="mt-5">
+        <label for="" class="font-semibold">4 Digit Pin</label><br />
+        <input id="pin-number" type="text" placeholder="Enter 4 digit pin" class="input bg-[#F4F5F7] mt-3 rounded-3xl"/>
+      </div>
+      
+      <!-- Login Button -->
+      <button id="login-btn" class="bg-[#0874F2] btn w-full text-white text-xl font-semibold py-4 rounded-3xl mt-5">Login</button>
+    </form>
 
-        <!-- Mobile Number -->
-        <div>
-          <label for="" class="font-semibold">Mobile Number</label><br />
-          <input id="mobile-number" type="text" placeholder="Enter your number" class="input bg-[#F4F5F7] mt-3 rounded-3xl"/>
-        </div>
 
-        <!-- Pin Number -->
-        <div class="mt-5">
-          <label for="" class="font-semibold">4 Digit Pin</label><br />
-          <input id="pin-number" type="text" placeholder="Enter 4 digit pin" class="input bg-[#F4F5F7] mt-3 rounded-3xl"/>
-        </div>
-        
-        <!-- Login Button -->
-        <button id="login-btn" class="bg-[#0874F2] btn w-full text-white text-xl font-semibold py-4 rounded-3xl mt-5">Login</button>
-      </form>
-    </section>
     <!-- js script -->
      <script src="./js/script.js"></script>
   </body>
