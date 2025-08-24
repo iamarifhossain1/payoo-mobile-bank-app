@@ -9,10 +9,17 @@ const loginBtn = document.getElementById('login-btn')
     const mobileNumberValueConverted = parseInt(mobileNumberValue);
     const pinNumberValueConverted = parseInt(pinNumberValue);
     if (mobileNumberValueConverted === mobileNumber && pinNumberValueConverted === pinNumber) {
-       window.location.href='./home.html';
+       window.location.href="./home.html";
     }
 
     else { 
         alert('Invalid Credentials');
     }
+})
+
+// Logout Button
+
+document.getElementById('logout').addEventListener('click', function(event){
+    console.log('cliked');
+    
 })

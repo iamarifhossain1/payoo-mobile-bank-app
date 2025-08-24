@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/3760e97aed.js" crossorigin="anonymous"></script>
+    
 </head>
-<body>
-    <h1>Hello i am home Page</h1>
+<body class="bg-[#F4F5F7] h-[100vh] outfit">
+    <!-- Balance & Logout Button Nav -->
+     <section>
+        <div class="max-w-lg mx-auto flex justify-between items-center min-h-[50px] border-b-1 border-gray-300 p-4">
+        <!-- Balance Div -->
+         <div class="flex gap-4">
+            <img src="./assets/Group.png" alt="" class="h-[50px]">
+            <div>
+                <h1 class="text-lg font-semibold mb-1">$45000</h1>
+                <p class="text-sm text-gray-500">Available Balance</p>
+            </div>
+         </div>
+        <!-- Logout Button Div -->
+        <div>
+            <button class="logout-btn btn text-gray-500 font-light border-1 border-gray-300"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-500 font-light"></i> Logout</button>
+        </div>
+     </div>
+     </section>
+
+     <!-- js script -->
+      <script src="./js/script.js"></script>
 </body>
 </html>
