@@ -20,25 +20,132 @@
     
 </head>
 <body class="bg-[#F4F5F7] h-[100vh] outfit">
-    <!-- Balance & Logout Button Nav -->
-     <section>
-        <div class="max-w-lg mx-auto flex justify-between items-center min-h-[50px] border-b-1 border-gray-300 p-4">
-        <!-- Balance Div -->
-         <div class="flex gap-2">
-            <img src="./assets/Group.png" alt="" class="h-[50px]">
-            <div>
-                <h1 class="text-lg font-semibold mb-1">$45000</h1>
-                <p class="text-sm text-gray-500">Available Balance</p>
+    <!-- Nav, Welcome Message & Wallet Cards -->
+     <section class="max-w-lg mx-auto bg-white rounded-b-lg p-4">
+        <!-- Balance & Logout Button Nav -->
+            <section>
+                <div class="flex justify-between items-center min-h-[50px] border-b-1 border-gray-300 p-4">
+                <!-- Balance Div -->
+                <div class="flex gap-2">
+                    <img src="./assets/Group.png" alt="" class="h-[50px]">
+                    <div>
+                        <h1 class="text-lg font-semibold mb-1">$45000</h1>
+                        <p class="text-sm text-gray-500">Available Balance</p>
+                    </div>
+                </div>
+                <!-- Logout Button Div -->
+                <div>
+                    <button class="logout-btn btn text-gray-500 font-light border-1 border-gray-300"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-500 font-light"></i> Logout</button>
+                </div>
             </div>
-         </div>
-        <!-- Logout Button Div -->
-        <div>
-            <button class="logout-btn btn text-gray-500 font-light border-1 border-gray-300"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-500 font-light"></i> Logout</button>
-        </div>
-     </div>
+            </section>
+            
+            <!-- Welcome Message -->
+            <section class="mt-8 mb-6">
+                <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
+                <p class="text-gray-500 mt-3">Enjoy easy and convenient financial services with us. <br>Cashout charge is low and </p>
+            </section>
+
+            
+            <section class="">
+                <!-- Wallet Cards -->
+                <div class="grid grid-cols-3 gap-7 min-h-[200px]">
+                    <!-- Card - 1 -->
+                    <div class="bg-white border-1 border-gray-300 p-4 rounded-xl space-y-2">
+                        <img src="./assets/wallet1.png" alt="" class="mx-auto">
+                        <h1 class="text-gray-700 text-center">Add Money</h1>
+                    </div>
+
+                    <!-- Card - 2 -->
+                    <div class="bg-white border-1 border-gray-300 p-4 rounded-xl space-y-2">
+                        <img src="./assets/send1.png" alt="" class="mx-auto">
+                        <h1 class="text-gray-700 text-center">Cash Out</h1>
+                    </div>
+
+                    <!-- Card - 3 -->
+                    <div class="bg-white border-1 border-gray-300 p-4 rounded-xl space-y-2">
+                        <img src="./assets/money1.png" alt="" class="mx-auto">
+                        <h1 class="text-gray-700 text-center">Transfer Money</h1>
+                    </div>
+
+                    <!-- Card - 4 -->
+                    <div class="bg-white border-1 border-gray-300 p-4 rounded-xl space-y-2 -mt-3">
+                        <img src="./assets/bonus1.png" alt="" class="mx-auto">
+                        <h1 class="text-gray-700 text-center">Get Bonus</h1>
+                    </div>
+
+                    <!-- Card - 5 -->
+                    <div class="bg-white border-1 border-gray-300 p-4 rounded-xl space-y-2 -mt-3">
+                        <img src="./assets/purse1.png" alt="" class="mx-auto">
+                        <h1 class="text-gray-700 text-center">Pay Bill</h1>
+                    </div>
+
+                    <!-- Card - 6 -->
+                    <div class="bg-white border-1 border-gray-300 p-4 rounded-xl space-y-2 -mt-3">
+                        <img src="./assets/transaction1.png" alt="" class="mx-auto">
+                        <h1 class="text-gray-700 text-center">Transaction</h1>
+                    </div>
+
+                </div>
+            </section>
      </section>
 
+     <!-- All Form Section -->
+      <section>
+        <!-- Add Money -->
+         <div class="max-w-lg mx-auto">
+            <h1 class="mt-8 mb-5 font-semibold">Add Money</h1>
+            <div>
+                <form action="" class="bg-white rounded-2xl p-8">
+                    <!-- Select Bank -->
+                    <div>
+                        <label class="text-gray-800 font-semibold">Select a Bank</label><br>
+                    <select class="select w-full bg-[#F4F5F7] rounded-3xl mt-3">
+                        <option class="text-gray-400" >Select a Bank</option>
+                        <option>AB Bank</option>
+                        <option>Agrani Bank</option>
+                        <option>BRAC Bank</option>
+                        <option>City Bank</option>
+                        <option>Dutch-Bangla Bank</option>
+                        <option>Eastern Bank</option>
+                        <option>EXIM Bank</option>
+                        <option>HSBC</option>
+                        <option>IFIC Bank</option>
+                        <option>Islami Bank Bangladesh</option>
+                        <option>Janata Bank</option>
+                        <option>Mercantile Bank</option>
+                        <option>Mutual Trust Bank (MTB)</option>
+                        <option>Prime Bank</option>
+                        <option>Pubali Bank</option>
+                        <option>Rupali Bank</option>
+                        <option>Social Islami Bank</option>
+                        <option>Sonali Bank</option>
+                        <option>Standard Chartered Bank</option>
+                        <option>United Commercial Bank (UCB)</option>
+                    </select>
+                    </div>
+                    <!-- Bank Account Number -->
+                    <div class="mt-3">
+                        <label class="text-gray-800 font-semibold">Bank Account Number</label><br>
+                        <input id="pin-number" type="text" placeholder="Enter 11 digit account number" class="input w-full bg-[#F4F5F7] mt-3 rounded-3xl"/>
+                    </div>
+                    <!-- Amout Add -->
+                    <div class="mt-3">
+                        <label class="text-gray-800 font-semibold">Amount to Add</label><br>
+                        <input id="pin-number" type="text" placeholder="Add Amount to withdraw" class="input w-full bg-[#F4F5F7] mt-3 rounded-3xl"/>
+                    </div>
+                    <!-- Pin Number -->
+                    <div class="mt-3">
+                        <label class="text-gray-800 font-semibold">Pin Number</label><br>
+                        <input id="pin-number" type="text" placeholder="Enter 4 digit pin number" class="input w-full bg-[#F4F5F7] mt-3 rounded-3xl"/>
+                    </div>
 
+                    <button id="add-money-btn" class="bg-[#0874F2] btn w-full text-white text-xl font-semibold py-4 rounded-3xl mt-5">Add Money</button>
+
+                </form>
+            </div>
+         </div>
+      </section>
 
      <!-- js script -->
       <script src="./js/script.js"></script>
