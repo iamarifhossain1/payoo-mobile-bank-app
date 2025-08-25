@@ -16,7 +16,7 @@ document.getElementById('add-money-btn')
 
     if(addAmount < 100) {
         alert('Minimum Transaction 100 Taka')
-        
+        return;
     }
 
     if(pinNumber !== validPin) {
@@ -26,6 +26,4 @@ document.getElementById('add-money-btn')
     
     const addAmountBalance = addAmount + balance;
     const newBalance = document.getElementById('balance').innerText = addAmountBalance;
-    
-    
 })
