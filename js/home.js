@@ -108,6 +108,7 @@ const transferMoney = document.getElementById('transfer-money-btn')
     
 })
 
+// Get Bonus
 
 const getBonus = document.getElementById('get-bonus-btn')
 .addEventListener('click', function(event) {
@@ -127,6 +128,38 @@ const getBonus = document.getElementById('get-bonus-btn')
     
 })
 
+
+// Pay Bill
+
+const payBill = document.getElementById('pay-bill-btn')
+.addEventListener('click', function(event) {
+    event.preventDefault();
+    const payBank = document.getElementById('pay-bill-bank').value;
+    const billerAccountNumber = document.getElementById('biller-account-number').value;
+    const payAmount = parseInt(document.getElementById('pay-amount').value);
+    const pinNumber = parseInt(document.getElementById('pay-bill-pin-number').value);
+    const currentBalance = document.getElementById('balance').innerText;
+
+    if(billerAccountNumber.length !== 11) {
+        alert('Please provide a valid account number');
+        return;
+    }
+
+    else if (payAmount < 100) {
+        alert('Minimum pay bill limit 100 taka');
+        return;
+    }
+
+    else if (pinNumber !== validPin) {
+        alert('Please provide a valid pin number');
+        return;
+    }
+ 
+    const afterPay = currentBalance - payAmount;
+    const newBalance = document.getElementById('balance').innerText = afterPay;
+    
+})
+
 // Toggle Feature
 
 const addMoney = document.getElementById('add-money-card')
@@ -135,6 +168,7 @@ const addMoney = document.getElementById('add-money-card')
     document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('transfer-money-parent').style.display = 'none';
     document.getElementById('get-bonus-parent').style.display = 'none';
+    document.getElementById('pay-bill-parent').style.display = 'none'
 })
 
 const cashOut = document.getElementById('cash-out-card')
@@ -143,6 +177,7 @@ const cashOut = document.getElementById('cash-out-card')
     document.getElementById('add-money-parent').style.display = 'none';
     document.getElementById('transfer-money-parent').style.display = 'none';
     document.getElementById('get-bonus-parent').style.display = 'none';
+    document.getElementById('pay-bill-parent').style.display = 'none'
 })
 
 const transfer = document.getElementById('transfer-money-card')
@@ -151,18 +186,25 @@ const transfer = document.getElementById('transfer-money-card')
     document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('add-money-parent').style.display = 'none';
     document.getElementById('get-bonus-parent').style.display = 'none';
-
-
+    document.getElementById('pay-bill-parent').style.display = 'none'
 })
 
-const Bonus = document.getElementById('get-bonus-card')
+const bonus = document.getElementById('get-bonus-card')
 .addEventListener('click', function() {
     document.getElementById('get-bonus-parent').style.display = 'block';
     document.getElementById('transfer-money-parent').style.display = 'none';
     document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('add-money-parent').style.display = 'none';
+    document.getElementById('pay-bill-parent').style.display = 'none'
+})
 
-
+const bill = document.getElementById('pay-bill-card')
+.addEventListener('click', function() {
+    document.getElementById('pay-bill-parent').style.display = 'block'
+    document.getElementById('get-bonus-parent').style.display = 'none';
+    document.getElementById('transfer-money-parent').style.display = 'none';
+    document.getElementById('cash-out-parent').style.display = 'none';
+    document.getElementById('add-money-parent').style.display = 'none';
 })
 
 // Logout Button
