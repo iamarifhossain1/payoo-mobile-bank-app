@@ -109,13 +109,32 @@ const transferMoney = document.getElementById('transfer-money-btn')
 })
 
 
+const getBonus = document.getElementById('get-bonus-btn')
+.addEventListener('click', function(event) {
+    event.preventDefault();
+    const couponNumber = 1628242667;
+    const couponMoney = 1000;
+    const bounsCoupon = parseInt(document.getElementById('bonus-coupon').value);
+    const currentBalance = parseInt(document.getElementById('balance').innerText);
+
+    if(couponNumber === couponNumber) {
+        alert ('Please provide a valid coupon number');
+        return;
+    }
+
+    const afterCouponBalance = couponMoney + currentBalance;
+    const couponNewBalance = document.getElementById('balance').innerText = afterCouponBalance;
+    
+})
+
 // Toggle Feature
 
 const addMoney = document.getElementById('add-money-card')
 .addEventListener('click', function(){
-    document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('add-money-parent').style.display = 'block';
+    document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('transfer-money-parent').style.display = 'none';
+    document.getElementById('get-bonus-parent').style.display = 'none';
 })
 
 const cashOut = document.getElementById('cash-out-card')
@@ -123,6 +142,7 @@ const cashOut = document.getElementById('cash-out-card')
     document.getElementById('cash-out-parent').style.display = 'block';
     document.getElementById('add-money-parent').style.display = 'none';
     document.getElementById('transfer-money-parent').style.display = 'none';
+    document.getElementById('get-bonus-parent').style.display = 'none';
 })
 
 const transfer = document.getElementById('transfer-money-card')
@@ -130,12 +150,20 @@ const transfer = document.getElementById('transfer-money-card')
     document.getElementById('transfer-money-parent').style.display = 'block';
     document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('add-money-parent').style.display = 'none';
+    document.getElementById('get-bonus-parent').style.display = 'none';
 
 
 })
 
+const Bonus = document.getElementById('get-bonus-card')
+.addEventListener('click', function() {
+    document.getElementById('get-bonus-parent').style.display = 'block';
+    document.getElementById('transfer-money-parent').style.display = 'none';
+    document.getElementById('cash-out-parent').style.display = 'none';
+    document.getElementById('add-money-parent').style.display = 'none';
 
 
+})
 
 // Logout Button
 
