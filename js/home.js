@@ -48,6 +48,10 @@ document.getElementById('cash-out-btn')
         return;
     }
 
+    else if (cashOutAmount >= 25000) {
+        alert ('Cashout limit 25000 taka per day')
+    }
+
     else if (cashOutPinNumber !== validPin) {
         alert ('Please provide a valid pin number');
         return;
@@ -66,15 +70,42 @@ document.getElementById('cash-out-btn')
 
 // Transfer Money
 
-const transferMoney = document.getElementById('transfer-money-card')
-.addEventListener('click', function(event){
-    event.defaultPrevented();
-    const userAccountNumber = parseInt(document.getElementById('user-account-number').value);
+const transferMoney = document.getElementById('transfer-money-btn')
+.addEventListener('click', function(event) {
+    event.preventDefault();
+    const userAccountNumber = document.getElementById('user-account-number').value;
     const transferAmount = parseInt(document.getElementById('transfer-amount').value);
-    const transferPin = parseInt(document.getElementById('transfer-pin-number').value);
+    const pinNumber = parseInt(document.getElementById('transfer-pin-number').value);
     const currentBalance = parseInt(document.getElementById('balance').innerText);
+
+    if (userAccountNumber.length !== 11) {
+        alert ('Please provide a valid account number');
+        return;
+    }
+
+    else if (transferAmount < 100) {
+        alert ('Minimum transfer money 100 taka');
+        return;
+    }
+
+    else if(transferAmount > currentBalance) {
+        alert ('Insufficient fund');
+        return;
+    }
+
+    else if (transferAmount >= 25000) {
+        alert ('Transfer money limit 25000 per day');
+        return;
+    }
+
+    else if (pinNumber !== validPin) {
+        alert ('Please provide a valid pin number');
+        return;
+    }
+
     const transferBalance = currentBalance - transferAmount;
     const newBalance = document.getElementById('balance').innerText = transferBalance;
+    
 })
 
 
@@ -99,7 +130,7 @@ const transfer = document.getElementById('transfer-money-card')
     document.getElementById('transfer-money-parent').style.display = 'block';
     document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('add-money-parent').style.display = 'none';
-    
+
 
 })
 
