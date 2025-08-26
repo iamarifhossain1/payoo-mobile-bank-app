@@ -53,9 +53,28 @@ document.getElementById('cash-out-btn')
         return;
     }
 
+
+    else if (cashOutAmount > balance) {
+        alert ('Insufficient fund')
+        return;
+    }
+
     const currenBalance = balance - cashOutAmount ;
     const newBalance = document.getElementById('balance').innerText = currenBalance;
  
+})
+
+// Transfer Money
+
+const transferMoney = document.getElementById('transfer-money-card')
+.addEventListener('click', function(event){
+    event.defaultPrevented();
+    const userAccountNumber = parseInt(document.getElementById('user-account-number').value);
+    const transferAmount = parseInt(document.getElementById('transfer-amount').value);
+    const transferPin = parseInt(document.getElementById('transfer-pin-number').value);
+    const currentBalance = parseInt(document.getElementById('balance').innerText);
+    const transferBalance = currentBalance - transferAmount;
+    const newBalance = document.getElementById('balance').innerText = transferBalance;
 })
 
 
@@ -64,13 +83,24 @@ document.getElementById('cash-out-btn')
 const addMoney = document.getElementById('add-money-card')
 .addEventListener('click', function(){
     document.getElementById('cash-out-parent').style.display = 'none';
-    document.getElementById('add-money-parent').style.display = 'block'
+    document.getElementById('add-money-parent').style.display = 'block';
+    document.getElementById('transfer-money-parent').style.display = 'none';
 })
 
 const cashOut = document.getElementById('cash-out-card')
 .addEventListener('click', function(){
     document.getElementById('cash-out-parent').style.display = 'block';
-    document.getElementById('add-money-parent').style.display = 'none'
+    document.getElementById('add-money-parent').style.display = 'none';
+    document.getElementById('transfer-money-parent').style.display = 'none';
+})
+
+const transfer = document.getElementById('transfer-money-card')
+.addEventListener('click', function() {
+    document.getElementById('transfer-money-parent').style.display = 'block';
+    document.getElementById('cash-out-parent').style.display = 'none';
+    document.getElementById('add-money-parent').style.display = 'none';
+    
+
 })
 
 
