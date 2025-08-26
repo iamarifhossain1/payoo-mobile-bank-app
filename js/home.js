@@ -33,30 +33,29 @@ document.getElementById('add-money-btn')
 document.getElementById('cash-out-btn')
 .addEventListener('click', function(event){
     event.preventDefault();
-    const cashOutNumber = parseInt(document.getElementById('agent-number').value);
+    const cashOutNumber = document.getElementById('agent-number').value;
     const cashOutAmount = parseInt(document.getElementById('cash-out-amount').value);
-    const pinNumber = parseInt(document.getElementById('pin-number').value);
+    const cashOutPinNumber = parseInt(document.getElementById('cashout-pin-number').value);
     const balance = parseInt(document.getElementById('balance').innerText);
 
-    if (cashOutNumber.length < 11) {
+    if (cashOutNumber.length !==  11) {
         alert('Please provide a valid bank account number');
         return;
     }
 
-    if (cashOut < 100) {
+    else if (cashOutAmount < 100) {
         alert ('Minimum Cash Out 100 Taka');
         return;
     }
 
-    if (pinNumber !== validPin) {
-        alert ('Please provide a valid pin number')
+    else if (cashOutPinNumber !== validPin) {
+        alert ('Please provide a valid pin number');
         return;
     }
 
     const currenBalance = balance - cashOutAmount ;
     const newBalance = document.getElementById('balance').innerText = currenBalance;
-
-    
+ 
 })
 
 
@@ -64,25 +63,16 @@ document.getElementById('cash-out-btn')
 
 const addMoney = document.getElementById('add-money-card')
 .addEventListener('click', function(){
-    document.getElementById('add-money-parent').style.display = 'none';
-    document.getElementById('cash-out-parent').style.display = 'none'
-    document.getElementById('add-money-parent').style.display = 'block';
+    document.getElementById('cash-out-parent').style.display = 'none';
+    document.getElementById('add-money-parent').style.display = 'block'
 })
 
 const cashOut = document.getElementById('cash-out-card')
 .addEventListener('click', function(){
-    document.getElementById('cash-out-parent').style.display = 'none'
-    document.getElementById('add-money-parent').style.display = 'none';
     document.getElementById('cash-out-parent').style.display = 'block';
+    document.getElementById('add-money-parent').style.display = 'none'
 })
 
-const transferMoney = document.getElementById('transfer-money-card')
-.addEventListener('click', function(){
-    document.getElementById('')
-    document.getElementById('cash-out-parent').style.display = 'none'
-    document.getElementById('add-money-parent').style.display = 'none';
-    document.getElementById('cash-out-parent').style.display = 'block';
-})
 
 
 
