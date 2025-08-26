@@ -16,10 +16,3 @@ const loginBtn = document.getElementById('login-btn')
         alert('Invalid Credentials');
     }
 })
-
-// Logout Button
-
-document.getElementById('logout').addEventListener('click', function(event){
-    console.log('cliked');
-    
-})

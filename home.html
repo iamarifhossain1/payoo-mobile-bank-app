@@ -35,7 +35,7 @@
                 </div>
                 <!-- Logout Button Div -->
                 <div>
-                    <button class="logout-btn btn text-gray-500 font-light border-1 border-gray-300"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-500 font-light"></i> Logout</button>
+                    <button id="logout-btn" class="btn text-gray-500 font-light border-1 border-gray-300"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-500 font-light"></i> Log Out</button>
                 </div>
             </div>
             </section>
@@ -93,8 +93,8 @@
      <!-- All Form Section -->
       <section class="">
         <!-- Add Money -->
-         <div class="max-w-lg mx-auto p-4">
-            <h1 class="mt-8 mb-5 font-semibold">Add Money</h1>
+         <div id="add-money-parent" class="max-w-lg mx-auto p-4">
+            <h1 class="text-gray-800 mt-8 mb-5 font-semibold">Add Money</h1>
             <div>
                 <form action="" class="bg-white rounded-2xl p-8">
                     <!-- Select Bank -->
@@ -145,6 +145,10 @@
                 </form>
             </div>
          </div>
+
+         <!-- Cash Out -->
+          <div id="cash-out-parent"></div>
+            <h1 class="text-gray-800">Cash Out</h1>
       </section>
 
      <!-- js script -->

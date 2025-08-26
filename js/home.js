@@ -27,3 +27,11 @@ document.getElementById('add-money-btn')
     const addAmountBalance = addAmount + balance;
     const newBalance = document.getElementById('balance').innerText = addAmountBalance;
 })
+
+
+// Logout Button
+
+const logoutBtn = document
+.getElementById('logout-btn').addEventListener('click', function(){
+    window.location.href="./index.html";
+})
