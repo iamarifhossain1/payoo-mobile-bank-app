@@ -1,4 +1,37 @@
 const validPin = 1234;
+
+// Function to get values
+
+function getParseValue(id) {
+    const getElement = document.getElementById(id);
+    const getValue = getElement.value;
+    const wrapParse = parseInt(getValue);
+    return wrapParse;
+}
+
+function getValue(id) {
+    const getElement = document.getElementById(id);
+    const getValue = getElement.value;
+    return getValue;
+}
+
+// Function to get innerText
+
+function getInnerText(id) {
+    const getElement = document.getElementById(id);
+    const getValue = getElement.innerText;
+    const wrapParse = parseInt(getValue);
+    return wrapParse;
+}
+
+// Function to set innerText
+
+function setInnerText(id) {
+    const balanceElement = document.getElementById('balance');
+    balanceElement.innerText = value;
+}
+
+
 // Add Money
 document.getElementById('add-money-btn')
 .addEventListener('click', function(event){
@@ -118,7 +151,7 @@ const getBonus = document.getElementById('get-bonus-btn')
     const bounsCoupon = parseInt(document.getElementById('bonus-coupon').value);
     const currentBalance = parseInt(document.getElementById('balance').innerText);
 
-    if(couponNumber === couponNumber) {
+    if(bounsCoupon !== couponNumber) {
         alert ('Please provide a valid coupon number');
         return;
     }
@@ -164,47 +197,51 @@ const payBill = document.getElementById('pay-bill-btn')
 
 const addMoney = document.getElementById('add-money-card')
 .addEventListener('click', function(){
+    const forms = document.getElementsByClassName('form');
+    for (const form of forms) {
+        form.style.display = 'none'
+    }
     document.getElementById('add-money-parent').style.display = 'block';
-    document.getElementById('cash-out-parent').style.display = 'none';
-    document.getElementById('transfer-money-parent').style.display = 'none';
-    document.getElementById('get-bonus-parent').style.display = 'none';
-    document.getElementById('pay-bill-parent').style.display = 'none'
 })
 
 const cashOut = document.getElementById('cash-out-card')
 .addEventListener('click', function(){
-    document.getElementById('cash-out-parent').style.display = 'block';
-    document.getElementById('add-money-parent').style.display = 'none';
-    document.getElementById('transfer-money-parent').style.display = 'none';
-    document.getElementById('get-bonus-parent').style.display = 'none';
-    document.getElementById('pay-bill-parent').style.display = 'none'
+   const forms = document.getElementsByClassName('form');
+   for (const form of forms) {
+    form.style.display = 'none'
+   }
+
+   document.getElementById('cash-out-parent').style.display = 'block';
 })
 
 const transfer = document.getElementById('transfer-money-card')
 .addEventListener('click', function() {
+    const forms = document.getElementsByClassName('form');
+    for (const form of forms) {
+        form.style.display = 'none';
+    }
+
     document.getElementById('transfer-money-parent').style.display = 'block';
-    document.getElementById('cash-out-parent').style.display = 'none';
-    document.getElementById('add-money-parent').style.display = 'none';
-    document.getElementById('get-bonus-parent').style.display = 'none';
-    document.getElementById('pay-bill-parent').style.display = 'none'
 })
 
 const bonus = document.getElementById('get-bonus-card')
 .addEventListener('click', function() {
+    const forms = document.getElementsByClassName('form');
+    for (const form of forms) {
+        form.style.display = 'none'
+    }
+
     document.getElementById('get-bonus-parent').style.display = 'block';
-    document.getElementById('transfer-money-parent').style.display = 'none';
-    document.getElementById('cash-out-parent').style.display = 'none';
-    document.getElementById('add-money-parent').style.display = 'none';
-    document.getElementById('pay-bill-parent').style.display = 'none'
 })
 
 const bill = document.getElementById('pay-bill-card')
 .addEventListener('click', function() {
-    document.getElementById('pay-bill-parent').style.display = 'block'
-    document.getElementById('get-bonus-parent').style.display = 'none';
-    document.getElementById('transfer-money-parent').style.display = 'none';
-    document.getElementById('cash-out-parent').style.display = 'none';
-    document.getElementById('add-money-parent').style.display = 'none';
+    const forms = document.getElementsByClassName('form');
+    for (const form of forms) {
+        form.style.display = 'none';
+    }
+
+    document.getElementById('pay-bill-parent').style.display = 'block';
 })
 
 // Logout Button
