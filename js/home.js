@@ -1,5 +1,7 @@
 const validPin = 1234;
 
+const transactionData = [];
+
 // Function to get values
 
 function getParseValue(id) {
@@ -42,6 +44,12 @@ function toggle(id) {
     document.getElementById('id').style.display = 'block';
 }
 
+// Function to Toggle Card BG & Border
+
+function cardBgBorder(id) {
+
+}
+
 // Add Money
 document.getElementById('add-money-btn')
 .addEventListener('click', function(event){
@@ -69,6 +77,14 @@ document.getElementById('add-money-btn')
     
     const addAmountBalance = addAmount + balance;
     const newBalance = document.getElementById('balance').innerText = addAmountBalance;
+
+    const data = {
+        name: 'Add Money',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data);
+    console.log(transactionData);
 })
 
 // Cash Out
@@ -108,6 +124,14 @@ document.getElementById('cash-out-btn')
 
     const currenBalance = balance - cashOutAmount ;
     const newBalance = document.getElementById('balance').innerText = currenBalance;
+
+    const data = {
+        name: 'Cash Out',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data);
+    console.log(transactionData);
  
 })
 
@@ -148,6 +172,14 @@ const transferMoney = document.getElementById('transfer-money-btn')
 
     const transferBalance = currentBalance - transferAmount;
     const newBalance = document.getElementById('balance').innerText = transferBalance;
+
+    const data = {
+        name: 'Send Money',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data);
+    console.log(transactionData);
     
 })
 
@@ -168,6 +200,14 @@ const getBonus = document.getElementById('get-bonus-btn')
 
     const afterCouponBalance = couponMoney + currentBalance;
     const couponNewBalance = document.getElementById('balance').innerText = afterCouponBalance;
+
+    const data = {
+        name: 'Bonus',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data);
+    console.log(transactionData);
     
 })
 
@@ -199,6 +239,14 @@ const payBill = document.getElementById('pay-bill-btn')
  
     const afterPay = currentBalance - payAmount;
     const newBalance = document.getElementById('balance').innerText = afterPay;
+
+    const data = {
+        name: 'Pay Bill',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data);
+    console.log(transactionData);
     
 })
 
@@ -217,6 +265,7 @@ const addMoney = document.getElementById('add-money-card')
     const cardBtn = document.getElementsByClassName('card-btns');
     for (const btn of cardBtn) {
         btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+        btn.classList.add("border-gray-300");
     }
 
     document.getElementById('add-money-card').classList.remove("border-gray-300");
@@ -237,7 +286,9 @@ const cashOut = document.getElementById('cash-out-card')
 
    const cardBtn = document.getElementsByClassName('card-btns');
    for (const btn of cardBtn) {
-    btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]",);
+    btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+    btn.classList.add("border-gray-300");
+    
    }
 
    document.getElementById('cash-out-card').classList.remove("border-gray-300");
@@ -257,6 +308,7 @@ const transfer = document.getElementById('transfer-money-card')
     const cardBtn = document.getElementsByClassName('card-btns');
     for (const btn of cardBtn) {
         btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+        btn.classList.add("border-gray-300");
     }
 
     document.getElementById('transfer-money-card').classList.remove("border-gray-300");
@@ -278,6 +330,7 @@ const bonus = document.getElementById('get-bonus-card')
     const cardBtn = document.getElementsByClassName('card-btns');
     for (const btn of cardBtn) {
         btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+        btn.classList.add("border-gray-300");
     }
 
     document.getElementById('get-bonus-card').classList.remove("border-gray-300");
@@ -298,10 +351,32 @@ const bill = document.getElementById('pay-bill-card')
     const cardBtn = document.getElementsByClassName('card-btns');
     for (const btn of cardBtn) {
         btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+        btn.classList.add("border-gray-300");
     }
 
     document.getElementById('pay-bill-card').classList.remove("border-gray-300");
     document.getElementById('pay-bill-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
+})
+
+const transaction = document.getElementById('transaction-card')
+.addEventListener('click', function(){
+    const forms = document.getElementsByClassName('form');
+    for (const form of forms) {
+        form.style.display = 'none';
+    }
+
+    document.getElementById('transaction-parent').style.display = 'block';
+
+     // Card BG & Border
+
+    const cardBtn = document.getElementsByClassName('card-btns');
+    for (const btn of cardBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+        btn.classList.add("border-gray-300");
+    }
+
+    document.getElementById('transaction-card').classList.remove("border-gray-300");
+    document.getElementById('transaction-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
 })
 
 // Logout Button
