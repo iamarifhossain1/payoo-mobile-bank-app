@@ -250,6 +250,37 @@ const payBill = document.getElementById('pay-bill-btn')
     
 })
 
+// Dynamic Transaction History
+
+document.getElementById('transaction-card')
+.addEventListener('click', function(){
+    const transactionContainer = document.getElementById('transaction-container');
+    transactionContainer.innerText = '';
+    for(const data of transactionData) {
+        const divElement = document.createElement('div');
+        divElement.innerHTML = `
+            <div class="flex justify-between items-center bg-white py-3 px-4 mt-4 rounded-xl">
+                    <div class=" flex items-center gap-5">
+                    <div class="bg-gray-100  rounded-full p-4">
+                        <img src="./assets/wallet1.png" alt="">
+                    </div>
+                    <div>
+                        <h1 class="text-gray-800 font-semibold">${data.name}</h1>
+                        <p class="text-sm text-gray-500 mt-1">${data.date}</p>
+                    </div>
+                    </div>  
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+        `
+
+        transactionContainer.appendChild(divElement)
+    }
+    
+})
+
+
+
+
 // Toggle Feature
 
 const addMoney = document.getElementById('add-money-card')
