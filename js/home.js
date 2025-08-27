@@ -32,6 +32,16 @@ function setInnerText(id) {
 }
 
 
+// Toggole Function
+
+function toggle(id) {
+    const forms = document.getElementsByClassName('form');
+    for (const form of forms) {
+        form.style.display = 'none';
+    }
+    document.getElementById('id').style.display = 'block';
+}
+
 // Add Money
 document.getElementById('add-money-btn')
 .addEventListener('click', function(event){
@@ -161,7 +171,6 @@ const getBonus = document.getElementById('get-bonus-btn')
     
 })
 
-
 // Pay Bill
 
 const payBill = document.getElementById('pay-bill-btn')
@@ -202,6 +211,17 @@ const addMoney = document.getElementById('add-money-card')
         form.style.display = 'none'
     }
     document.getElementById('add-money-parent').style.display = 'block';
+
+    // Card BG & Border
+
+    const cardBtn = document.getElementsByClassName('card-btns');
+    for (const btn of cardBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+    }
+
+    document.getElementById('add-money-card').classList.remove("border-gray-300");
+    document.getElementById('add-money-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
+    
 })
 
 const cashOut = document.getElementById('cash-out-card')
@@ -212,6 +232,16 @@ const cashOut = document.getElementById('cash-out-card')
    }
 
    document.getElementById('cash-out-parent').style.display = 'block';
+
+    // Card BG & Border
+
+   const cardBtn = document.getElementsByClassName('card-btns');
+   for (const btn of cardBtn) {
+    btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]",);
+   }
+
+   document.getElementById('cash-out-card').classList.remove("border-gray-300");
+    document.getElementById('cash-out-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
 })
 
 const transfer = document.getElementById('transfer-money-card')
@@ -220,8 +250,18 @@ const transfer = document.getElementById('transfer-money-card')
     for (const form of forms) {
         form.style.display = 'none';
     }
-
     document.getElementById('transfer-money-parent').style.display = 'block';
+
+    // Card BG & Border
+
+    const cardBtn = document.getElementsByClassName('card-btns');
+    for (const btn of cardBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+    }
+
+    document.getElementById('transfer-money-card').classList.remove("border-gray-300");
+    document.getElementById('transfer-money-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
+
 })
 
 const bonus = document.getElementById('get-bonus-card')
@@ -232,6 +272,16 @@ const bonus = document.getElementById('get-bonus-card')
     }
 
     document.getElementById('get-bonus-parent').style.display = 'block';
+
+    // Card BG & Border
+
+    const cardBtn = document.getElementsByClassName('card-btns');
+    for (const btn of cardBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+    }
+
+    document.getElementById('get-bonus-card').classList.remove("border-gray-300");
+    document.getElementById('get-bonus-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
 })
 
 const bill = document.getElementById('pay-bill-card')
@@ -242,6 +292,16 @@ const bill = document.getElementById('pay-bill-card')
     }
 
     document.getElementById('pay-bill-parent').style.display = 'block';
+
+    // Card BG & Border
+
+    const cardBtn = document.getElementsByClassName('card-btns');
+    for (const btn of cardBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f27a]");
+    }
+
+    document.getElementById('pay-bill-card').classList.remove("border-gray-300");
+    document.getElementById('pay-bill-card').classList.add("border-[#0874f2]","bg-[#0874f27a]");
 })
 
 // Logout Button
